@@ -1,0 +1,883 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/rackt/redux-simple-router#readme">redux-simple-router (v2.0.4)</a>
+</h1>
+<h4>Ruthlessly simple bindings to keep react-router and redux in sync</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-simple-router">module redux-simple-router</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-simple-router.routeActions.go">
+            function <span class="apidocSignatureSpan">redux-simple-router.</span>routeActions.go
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-simple-router.routeActions.goBack">
+            function <span class="apidocSignatureSpan">redux-simple-router.</span>routeActions.goBack
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-simple-router.routeActions.goForward">
+            function <span class="apidocSignatureSpan">redux-simple-router.</span>routeActions.goForward
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-simple-router.routeActions.push">
+            function <span class="apidocSignatureSpan">redux-simple-router.</span>routeActions.push
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-simple-router.routeActions.replace">
+            function <span class="apidocSignatureSpan">redux-simple-router.</span>routeActions.replace
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-simple-router.routeReducer">
+            function <span class="apidocSignatureSpan">redux-simple-router.</span>routeReducer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-simple-router.syncHistory">
+            function <span class="apidocSignatureSpan">redux-simple-router.</span>syncHistory
+            <span class="apidocSignatureSpan">(history)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">redux-simple-router.</span>routeActions</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">redux-simple-router.</span>TRANSITION</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">redux-simple-router.</span>UPDATE_LOCATION</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-simple-router.routeActions">module redux-simple-router.routeActions</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-simple-router.routeActions.go">
+            function <span class="apidocSignatureSpan">redux-simple-router.routeActions.</span>go
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-simple-router.routeActions.goBack">
+            function <span class="apidocSignatureSpan">redux-simple-router.routeActions.</span>goBack
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-simple-router.routeActions.goForward">
+            function <span class="apidocSignatureSpan">redux-simple-router.routeActions.</span>goForward
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-simple-router.routeActions.push">
+            function <span class="apidocSignatureSpan">redux-simple-router.routeActions.</span>push
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-simple-router.routeActions.replace">
+            function <span class="apidocSignatureSpan">redux-simple-router.routeActions.</span>replace
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-simple-router.routeActions.go">module redux-simple-router.routeActions.go</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-simple-router.routeActions.go.go">
+            function <span class="apidocSignatureSpan">redux-simple-router.routeActions.</span>go
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-simple-router.routeActions.goBack">module redux-simple-router.routeActions.goBack</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-simple-router.routeActions.goBack.goBack">
+            function <span class="apidocSignatureSpan">redux-simple-router.routeActions.</span>goBack
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-simple-router.routeActions.goForward">module redux-simple-router.routeActions.goForward</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-simple-router.routeActions.goForward.goForward">
+            function <span class="apidocSignatureSpan">redux-simple-router.routeActions.</span>goForward
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-simple-router.routeActions.push">module redux-simple-router.routeActions.push</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-simple-router.routeActions.push.push">
+            function <span class="apidocSignatureSpan">redux-simple-router.routeActions.</span>push
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-simple-router.routeActions.replace">module redux-simple-router.routeActions.replace</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-simple-router.routeActions.replace.replace">
+            function <span class="apidocSignatureSpan">redux-simple-router.routeActions.</span>replace
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-simple-router.routeReducer">module redux-simple-router.routeReducer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-simple-router.routeReducer.routeReducer">
+            function <span class="apidocSignatureSpan">redux-simple-router.</span>routeReducer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-simple-router.syncHistory">module redux-simple-router.syncHistory</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-simple-router.syncHistory.syncHistory">
+            function <span class="apidocSignatureSpan">redux-simple-router.</span>syncHistory
+            <span class="apidocSignatureSpan">(history)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-simple-router" id="apidoc.module.redux-simple-router">module redux-simple-router</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-simple-router.routeActions.go" id="apidoc.element.redux-simple-router.routeActions.go">
+        function <span class="apidocSignatureSpan">redux-simple-router.</span>routeActions.go
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">routeActions.go = function (arg) {
+  return {
+    type: TRANSITION,
+    payload: { method: method, arg: arg }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-simple-router.routeActions.goBack" id="apidoc.element.redux-simple-router.routeActions.goBack">
+        function <span class="apidocSignatureSpan">redux-simple-router.</span>routeActions.goBack
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">routeActions.goBack = function (arg) {
+  return {
+    type: TRANSITION,
+    payload: { method: method, arg: arg }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-simple-router.routeActions.goForward" id="apidoc.element.redux-simple-router.routeActions.goForward">
+        function <span class="apidocSignatureSpan">redux-simple-router.</span>routeActions.goForward
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">routeActions.goForward = function (arg) {
+  return {
+    type: TRANSITION,
+    payload: { method: method, arg: arg }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-simple-router.routeActions.push" id="apidoc.element.redux-simple-router.routeActions.push">
+        function <span class="apidocSignatureSpan">redux-simple-router.</span>routeActions.push
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">routeActions.push = function (arg) {
+  return {
+    type: TRANSITION,
+    payload: { method: method, arg: arg }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-simple-router.routeActions.replace" id="apidoc.element.redux-simple-router.routeActions.replace">
+        function <span class="apidocSignatureSpan">redux-simple-router.</span>routeActions.replace
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">routeActions.replace = function (arg) {
+  return {
+    type: TRANSITION,
+    payload: { method: method, arg: arg }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-simple-router.routeReducer" id="apidoc.element.redux-simple-router.routeReducer">
+        function <span class="apidocSignatureSpan">redux-simple-router.</span>routeReducer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function routeReducer() {
+  var state = arguments.length &lt;= 0 || arguments[0] === undefined ? initialState : arguments[0];
+  var _ref = arguments[1];
+  var type = _ref.type;
+  var location = _ref.payload;
+
+  if (type !== UPDATE_LOCATION) {
+    return state;
+  }
+
+  return _extends({}, state, { location: location });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-simple-router.syncHistory" id="apidoc.element.redux-simple-router.syncHistory">
+        function <span class="apidocSignatureSpan">redux-simple-router.</span>syncHistory
+        <span class="apidocSignatureSpan">(history)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function syncHistory(history) {
+  var unsubscribeHistory = undefined,
+      currentKey = undefined,
+      unsubscribeStore = undefined;
+  var connected = false,
+      syncing = false;
+
+  function middleware(store) {
+    unsubscribeHistory = history.listen(function (location) {
+      currentKey = location.key;
+      if (syncing) {
+        // Don't dispatch a new action if we're replaying location.
+        return;
+      }
+
+      store.dispatch(updateLocation(location));
+    });
+
+    connected = true;
+
+    return function (next) {
+      return function (action) {
+        if (action.type !== TRANSITION || !connected) {
+          return next(action);
+        }
+
+        var _action$payload = action.payload;
+        var method = _action$payload.method;
+        var arg = _action$payload.arg;
+
+        history[method](arg);
+      };
+    };
+  }
+
+  middleware.listenForReplays = function (store) {
+    var selectRouterState = arguments.length &lt;= 1 || arguments[1] === undefined ? SELECT_STATE : arguments[1];
+
+    var getRouterState = function getRouterState() {
+      return selectRouterState(store.getState());
+    };
+
+    var _getRouterState = getRouterState();
+
+    var initialLocation = _getRouterState.location;
+
+    unsubscribeStore = store.subscribe(function () {
+      var _getRouterState2 = getRouterState();
+
+      var location = _getRouterState2.location;
+
+      // If we're resetting to the beginning, use the saved initial value. We
+      // need to dispatch a new action at this point to populate the store
+      // appropriately.
+
+      if (!location) {
+        history.transitionTo(initialLocation);
+        return;
+      }
+
+      // Otherwise, if we need to update the history location, do so without
+      // dispatching a new action, as we're just bringing history in sync
+      // with the store.
+      if (location.key !== currentKey) {
+        syncing = true;
+        history.transitionTo(location);
+        syncing = false;
+      }
+    });
+  };
+
+  middleware.unsubscribe = function () {
+    unsubscribeHistory();
+    if (unsubscribeStore) {
+      unsubscribeStore();
+    }
+
+    connected = false;
+  };
+
+  return middleware;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-simple-router.routeActions" id="apidoc.module.redux-simple-router.routeActions">module redux-simple-router.routeActions</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-simple-router.routeActions.go" id="apidoc.element.redux-simple-router.routeActions.go">
+        function <span class="apidocSignatureSpan">redux-simple-router.routeActions.</span>go
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">go = function (arg) {
+  return {
+    type: TRANSITION,
+    payload: { method: method, arg: arg }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-simple-router.routeActions.goBack" id="apidoc.element.redux-simple-router.routeActions.goBack">
+        function <span class="apidocSignatureSpan">redux-simple-router.routeActions.</span>goBack
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">goBack = function (arg) {
+  return {
+    type: TRANSITION,
+    payload: { method: method, arg: arg }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-simple-router.routeActions.goForward" id="apidoc.element.redux-simple-router.routeActions.goForward">
+        function <span class="apidocSignatureSpan">redux-simple-router.routeActions.</span>goForward
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">goForward = function (arg) {
+  return {
+    type: TRANSITION,
+    payload: { method: method, arg: arg }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-simple-router.routeActions.push" id="apidoc.element.redux-simple-router.routeActions.push">
+        function <span class="apidocSignatureSpan">redux-simple-router.routeActions.</span>push
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">push = function (arg) {
+  return {
+    type: TRANSITION,
+    payload: { method: method, arg: arg }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Now you can read from `state.routing.location.pathname` to get the URL. It's far more likely that you want to change the URL
+ more often, however. You can use the `push` action creator that we provide:
+
+```js
+import { routeActions } from 'redux-simple-router'
+
+function MyComponent({ dispatch }) {
+  return &lt;Button onClick={() =&gt; dispatch(routeActions.<span class="apidocCodeKeywordSpan">push</span>('/foo'))}/&amp;#
+x3e;;
+}
+```
+
+This will change the state, which will trigger a change in react-router. Additionally, if you want to respond to the path update
+ action, just handle the `UPDATE_LOCATION` constant that we provide:
+
+```js
+import { UPDATE_LOCATION } from 'redux-simple-router'
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-simple-router.routeActions.replace" id="apidoc.element.redux-simple-router.routeActions.replace">
+        function <span class="apidocSignatureSpan">redux-simple-router.routeActions.</span>replace
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">replace = function (arg) {
+  return {
+    type: TRANSITION,
+    payload: { method: method, arg: arg }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-simple-router.routeActions.go" id="apidoc.module.redux-simple-router.routeActions.go">module redux-simple-router.routeActions.go</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-simple-router.routeActions.go.go" id="apidoc.element.redux-simple-router.routeActions.go.go">
+        function <span class="apidocSignatureSpan">redux-simple-router.routeActions.</span>go
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">go = function (arg) {
+  return {
+    type: TRANSITION,
+    payload: { method: method, arg: arg }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-simple-router.routeActions.goBack" id="apidoc.module.redux-simple-router.routeActions.goBack">module redux-simple-router.routeActions.goBack</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-simple-router.routeActions.goBack.goBack" id="apidoc.element.redux-simple-router.routeActions.goBack.goBack">
+        function <span class="apidocSignatureSpan">redux-simple-router.routeActions.</span>goBack
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">goBack = function (arg) {
+  return {
+    type: TRANSITION,
+    payload: { method: method, arg: arg }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-simple-router.routeActions.goForward" id="apidoc.module.redux-simple-router.routeActions.goForward">module redux-simple-router.routeActions.goForward</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-simple-router.routeActions.goForward.goForward" id="apidoc.element.redux-simple-router.routeActions.goForward.goForward">
+        function <span class="apidocSignatureSpan">redux-simple-router.routeActions.</span>goForward
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">goForward = function (arg) {
+  return {
+    type: TRANSITION,
+    payload: { method: method, arg: arg }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-simple-router.routeActions.push" id="apidoc.module.redux-simple-router.routeActions.push">module redux-simple-router.routeActions.push</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-simple-router.routeActions.push.push" id="apidoc.element.redux-simple-router.routeActions.push.push">
+        function <span class="apidocSignatureSpan">redux-simple-router.routeActions.</span>push
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">push = function (arg) {
+  return {
+    type: TRANSITION,
+    payload: { method: method, arg: arg }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Now you can read from `state.routing.location.pathname` to get the URL. It's far more likely that you want to change the URL
+ more often, however. You can use the `push` action creator that we provide:
+
+```js
+import { routeActions } from 'redux-simple-router'
+
+function MyComponent({ dispatch }) {
+  return &lt;Button onClick={() =&gt; dispatch(routeActions.<span class="apidocCodeKeywordSpan">push</span>('/foo'))}/&amp;#
+x3e;;
+}
+```
+
+This will change the state, which will trigger a change in react-router. Additionally, if you want to respond to the path update
+ action, just handle the `UPDATE_LOCATION` constant that we provide:
+
+```js
+import { UPDATE_LOCATION } from 'redux-simple-router'
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-simple-router.routeActions.replace" id="apidoc.module.redux-simple-router.routeActions.replace">module redux-simple-router.routeActions.replace</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-simple-router.routeActions.replace.replace" id="apidoc.element.redux-simple-router.routeActions.replace.replace">
+        function <span class="apidocSignatureSpan">redux-simple-router.routeActions.</span>replace
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">replace = function (arg) {
+  return {
+    type: TRANSITION,
+    payload: { method: method, arg: arg }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-simple-router.routeReducer" id="apidoc.module.redux-simple-router.routeReducer">module redux-simple-router.routeReducer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-simple-router.routeReducer.routeReducer" id="apidoc.element.redux-simple-router.routeReducer.routeReducer">
+        function <span class="apidocSignatureSpan">redux-simple-router.</span>routeReducer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function routeReducer() {
+  var state = arguments.length &lt;= 0 || arguments[0] === undefined ? initialState : arguments[0];
+  var _ref = arguments[1];
+  var type = _ref.type;
+  var location = _ref.payload;
+
+  if (type !== UPDATE_LOCATION) {
+    return state;
+  }
+
+  return _extends({}, state, { location: location });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-simple-router.syncHistory" id="apidoc.module.redux-simple-router.syncHistory">module redux-simple-router.syncHistory</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-simple-router.syncHistory.syncHistory" id="apidoc.element.redux-simple-router.syncHistory.syncHistory">
+        function <span class="apidocSignatureSpan">redux-simple-router.</span>syncHistory
+        <span class="apidocSignatureSpan">(history)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function syncHistory(history) {
+  var unsubscribeHistory = undefined,
+      currentKey = undefined,
+      unsubscribeStore = undefined;
+  var connected = false,
+      syncing = false;
+
+  function middleware(store) {
+    unsubscribeHistory = history.listen(function (location) {
+      currentKey = location.key;
+      if (syncing) {
+        // Don't dispatch a new action if we're replaying location.
+        return;
+      }
+
+      store.dispatch(updateLocation(location));
+    });
+
+    connected = true;
+
+    return function (next) {
+      return function (action) {
+        if (action.type !== TRANSITION || !connected) {
+          return next(action);
+        }
+
+        var _action$payload = action.payload;
+        var method = _action$payload.method;
+        var arg = _action$payload.arg;
+
+        history[method](arg);
+      };
+    };
+  }
+
+  middleware.listenForReplays = function (store) {
+    var selectRouterState = arguments.length &lt;= 1 || arguments[1] === undefined ? SELECT_STATE : arguments[1];
+
+    var getRouterState = function getRouterState() {
+      return selectRouterState(store.getState());
+    };
+
+    var _getRouterState = getRouterState();
+
+    var initialLocation = _getRouterState.location;
+
+    unsubscribeStore = store.subscribe(function () {
+      var _getRouterState2 = getRouterState();
+
+      var location = _getRouterState2.location;
+
+      // If we're resetting to the beginning, use the saved initial value. We
+      // need to dispatch a new action at this point to populate the store
+      // appropriately.
+
+      if (!location) {
+        history.transitionTo(initialLocation);
+        return;
+      }
+
+      // Otherwise, if we need to update the history location, do so without
+      // dispatching a new action, as we're just bringing history in sync
+      // with the store.
+      if (location.key !== currentKey) {
+        syncing = true;
+        history.transitionTo(location);
+        syncing = false;
+      }
+    });
+  };
+
+  middleware.unsubscribe = function () {
+    unsubscribeHistory();
+    if (unsubscribeStore) {
+      unsubscribeStore();
+    }
+
+    connected = false;
+  };
+
+  return middleware;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
