@@ -1,4 +1,7 @@
-# api documentation for  [redux-simple-router (v2.0.4)](https://github.com/rackt/redux-simple-router#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-redux-simple-router.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-redux-simple-router) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-redux-simple-router.svg)](https://travis-ci.org/npmdoc/node-npmdoc-redux-simple-router)
+# npmdoc-redux-simple-router
+
+#### basic api documentation for  [redux-simple-router (v2.0.4)](https://github.com/rackt/redux-simple-router#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-redux-simple-router.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-redux-simple-router) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-redux-simple-router.svg)](https://travis-ci.org/npmdoc/node-npmdoc-redux-simple-router)
+
 #### Ruthlessly simple bindings to keep react-router and redux in sync
 
 [![NPM](https://nodei.co/npm/redux-simple-router.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/redux-simple-router)
@@ -108,7 +111,8 @@
         "react",
         "redux"
     ],
-    "version": "2.0.4"
+    "version": "2.0.4",
+    "bin": {}
 }
 ```
 
